@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<meta name="msapplication-TileColor" content="#0061da">
+		<meta name="theme-color" content="#1643a3">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+
+		<!-- Title -->
+		<title>Housing List</title>
+
+		<!-- Dashboard css -->
+		<link href="{{ url_for('static', filename='assets/css/dashboard.css') }}" rel="stylesheet" />
+
+		<!-- Font family -->
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
+
+		<!--C3 Charts css -->
+		<link href="{{ url_for('static', filename='assets/plugins/charts-c3/c3-chart.css') }}" rel="stylesheet" />
+
+		<!-- Custom scroll bar css-->
+		<link href="{{ url_for('static', filename='assets/plugins/scroll-bar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" />
+
+		<!--Horizontal css -->
+        <link href="{{ url_for('static', filename='assets/plugins/horizontal-menu/dropdown-effects/fade-down.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='assets/plugins/horizontal-menu/horizontal.css') }}" rel="stylesheet" />
+
+		<!-- jvectormap css -->
+        <link href="{{ url_for('static', filename='assets/plugins/jvectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet" />
+
+		<!---Font icons css-->
+		<link href="{{ url_for('static', filename='assets/plugins/iconfonts/plugin.css') }}" rel="stylesheet" />
+		<link  href="{{ url_for('static', filename='assets/fonts/fonts/font-awesome.min.css') }}" rel="stylesheet">
+
+	</head>
+	<body class="app sidebar-mini rtl">
+
+		<!--Global-Loader-->
+		<div id="global-loader"></div>
+
+		<div class="page">
+			<div class="page-main">
+				<!--Horizontal-menu-->
+				<div class="horizontal-main clearfix">
+					<div class="horizontal-mainwrapper container clearfix">
+						<nav class="horizontalMenu clearfix">
+							<ul class="horizontalMenu-list">
+								<li aria-haspopup="true"><a href="/" class="">Search</a></li>
+								<li aria-haspopup="true"><a href="/apply" class="">Logs</a></li>
+								<li aria-haspopup="true"><a href="/submission" class="">Submit</a></li>
+							</ul>
+						</nav>
+						<!--Menu HTML Code-->
+					</div>
+				</div>
+
+                <!--content-area-->
+				<div class="content-area">
+					<div class="container">
+                        <!-- row -->
+						<div class="row">
+                            <div class="col-lg-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Alert</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="text-wrap">
+                                            <div class="">
+                                                <div class="alert alert-danger" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>{{ alert_text }}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+						</div>
+                        <!-- End row -->
+                        
+                        <!-- row -->
+						<div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group mb-0">
+                                    <label class="form-label">Processing Log</label>
+                                    <textarea rows="5" class="form-control" placeholder="Searching for Not Applied Housings" >{{ text }}</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End row -->
+					</div>
+				</div>
+				<!-- End content-area-->
+			</div>
+		</div>
+		<!-- End Page-->
+
+		<!-- Back to top -->
+		<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+		<!-- Jquery js-->
+		<script src="{{ url_for('static', filename='assets/js/vendors/jquery-3.2.1.min.js') }}"></script>
+
+		<!--Bootstrap js-->
+		<script src="{{ url_for('static', filename='assets/js/vendors/bootstrap.bundle.min.js') }}"></script>
+
+		<!--Jquery Sparkline js-->
+		<script src="{{ url_for('static', filename='assets/js/vendors/jquery.sparkline.min.js') }}"></script>
+
+		<!-- Chart Circle js-->
+		<script src="{{ url_for('static', filename='assets/js/vendors/circle-progress.min.js') }}"></script>
+
+		<!-- Star Rating js-->
+		<script src="{{ url_for('static', filename='assets/plugins/rating/jquery.rating-stars.js') }}"></script>
+
+		<!-- Flot Chart js-->
+		<script src="{{ url_for('static', filename='assets/plugins/flot/jquery.flot.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/flot/jquery.flot.fillbetween.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/flot/jquery.flot.pie.js') }}"></script>
+
+		<!--Jquery.knob js-->
+		<script src="{{ url_for('static', filename='assets/plugins/othercharts/jquery.knob.js') }}"></script>
+
+		<!--Other charts js-->
+		<script src="{{ url_for('static', filename='assets/js/othercharts.js') }}"></script>
+
+		<!-- Chart js -->
+		<script src="{{ url_for('static', filename='assets/plugins/chart/Chart.bundle.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/chart/utils.js') }}"></script>
+
+		<!-- Peity Chart js-->
+		<script src="{{ url_for('static', filename='assets/plugins/peitychart/jquery.peity.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/peitychart/peitychart.init.js') }}"></script>
+
+		<!-- Input Mask js -->
+		<script src="{{ url_for('static', filename='assets/plugins/input-mask/jquery.mask.min.js') }}"></script>
+
+		<!-- Custom scroll bar js-->
+		<script src="{{ url_for('static', filename='assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+
+		<!--Horizontal js-->
+		<script src="{{ url_for('static', filename='assets/plugins/horizontal-menu/horizontal.js') }}"></script>
+
+		<!-- Index js -->
+		<script src="{{ url_for('static', filename='assets/js/index1.js') }}"></script>
+
+		<!-- Search Js-->
+		<script src="{{ url_for('static', filename='assets/js/prefixfree.min.js') }}"></script>
+
+		<!-- ECharts js -->
+	    <script src="{{ url_for('static', filename='./assets/plugins/echarts/echarts.js') }}"></script>
+
+		<!-- Custom js-->
+		<script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+
+	</body>
+</html>

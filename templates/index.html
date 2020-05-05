@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<meta name="msapplication-TileColor" content="#0061da">
+		<meta name="theme-color" content="#1643a3">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+
+		<!-- Title -->
+		<title>Scraping | Postcasts</title>
+
+		<!-- Dashboard css -->
+		<link href="{{ url_for('static', filename='assets/fonts/fonts/font-awesome.min.css') }}" rel="stylesheet" />
+
+		<!-- Dashboard css -->
+		<link href="{{ url_for('static', filename='assets/css/dashboard.css') }}" rel="stylesheet" />
+
+		<!-- Font family -->
+		<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700" rel="stylesheet">
+
+		<!-- C3 Charts css -->
+		<link href="{{ url_for('static', filename='assets/plugins/charts-c3/c3-chart.css') }}" rel="stylesheet" />
+
+		<!-- Custom scroll bar css-->
+		<link href="{{ url_for('static', filename='assets/plugins/scroll-bar/jquery.mCustomScrollbar.css') }}" rel="stylesheet" />
+
+		<!--Horizontal css -->
+        <link href="{{ url_for('static', filename='assets/plugins/horizontal-menu/dropdown-effects/fade-down.css') }}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='assets/plugins/horizontal-menu/horizontal.css') }}" rel="stylesheet" />
+
+		<!---Font icons css-->
+		<link href="{{ url_for('static', filename='assets/plugins/iconfonts/plugin.css') }}" rel="stylesheet" />
+		<link href="{{ url_for('static', filename='assets/fonts/fonts/font-awesome.min.css') }}" rel="stylesheet" />
+
+	</head>
+	<body class="app sidebar-mini rtl">
+
+		<!--Global-Loader-->
+		<div id="global-loader"></div>
+
+		<div class="page">
+			<div class="page-main">
+                <!--content-area-->
+				<div class="content-area">
+					<div class="container">
+
+					    <!-- page-header -->
+						<div class="page-header">
+							<h4 class="page-title">Scraping | Postcasts</h4>
+						</div>
+						<!-- End page-header -->
+
+						<!-- row -->
+						<div class="row">
+							<div class="col-lg-8">
+								<form class="card" method="post" action="/scrape" method="POST">
+									<div class="card-header">
+										<div class="card-title">Settings</div>
+									</div>
+									<div class="card-body">
+										<div class="form-group">
+											<label class="form-label">Podcast URLs</label>
+											<input type="text" class="form-control" id="postcast_url1" name="postcast_url1" placeholder="Category URL">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="postcast_url2" name="postcast_url2" placeholder="Category URL">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="postcast_url3" name="postcast_url3" placeholder="Category URL">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="postcast_url4" name="postcast_url4" placeholder="Category URL">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="postcast_url5" name="postcast_url5" placeholder="Category URL">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="postcast_url6" name="postcast_url6" placeholder="Category URL">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="postcast_url7" name="postcast_url7" placeholder="Category URL">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="postcast_url8" name="postcast_url8" placeholder="Category URL">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="postcast_url9" name="postcast_url9" placeholder="Category URL">
+										</div>
+										<div class="form-group">
+											<input type="text" class="form-control" id="postcast_url10" name="postcast_url10" placeholder="Category URL">
+										</div>
+										<div class="form-footer">
+											<button type="submit" id="submit" class="btn btn-purple btn-block">Run</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- End row -->
+
+						<!-- row -->
+						<!-- <div class="row">
+							<div class="col-lg-6">
+								<form class="card" method="post" action="/scrape" method="POST">
+									<div class="card shadow">
+										<div class="card-header">
+											<h3 class="mb-0 card-title">File upload</h3>
+										</div>
+										<div class="card-body">
+											<input type="file" class="dropify" data-height="300" />
+										</div>
+									</div>
+									<div class="form-footer">
+										<button type="submit" id="submit" class="btn btn-purple btn-block">Upload</button>
+									</div>
+								</form>
+							</div>
+							
+						</div> -->
+						<!-- End row -->
+
+					</div>
+				</div>
+				<!-- End content-area-->
+				<input type="hidden" value="0" id="search_clickable">
+			</div>
+		</div>
+		<!-- End Page-->
+
+		<!-- Back to top -->
+		<a href="#top" id="back-to-top"><i class="fa fa-angle-up"></i></a>
+		<!-- Jquery js-->
+		<script src="{{ url_for('static', filename='assets/js/vendors/jquery-3.2.1.min.js') }}"></script>
+
+		<!--Bootstrap js-->
+		<script src="{{ url_for('static', filename='assets/js/vendors/bootstrap.bundle.min.js') }}"></script>
+
+		<!--Jquery Sparkline js-->
+		<script src="{{ url_for('static', filename='assets/js/vendors/jquery.sparkline.min.js') }}"></script>
+
+		<!-- Chart Circle js-->
+		<script src="{{ url_for('static', filename='assets/js/vendors/circle-progress.min.js') }}"></script>
+
+		<!-- Star Rating js-->
+		<script src="{{ url_for('static', filename='assets/plugins/rating/jquery.rating-stars.js') }}"></script>
+
+		<!-- Custom scroll bar js-->
+		<script src="{{ url_for('static', filename='assets/plugins/scroll-bar/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+
+		<!--Horizontal js-->
+		<script src="{{ url_for('static', filename='assets/plugins/horizontal-menu/horizontal.js') }}"></script>
+
+		<!-- C3 Charts js -->
+		<script src="{{ url_for('static', filename='assets/plugins/charts-c3/d3.v5.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/charts-c3/c3-chart.js') }}"></script>
+
+		<!-- Input Mask js-->
+		<script src="{{ url_for('static', filename='assets/plugins/input-mask/jquery.mask.min.js') }}"></script>
+
+        <!-- Index js-->
+		<script src="{{ url_for('static', filename='assets/js/index.js') }}"></script>
+
+		<!--Peitychart js-->
+		<script src="{{ url_for('static', filename='assets/plugins/peitychart/jquery.peity.min.js') }}"></script>
+		<script src="{{ url_for('static', filename='assets/plugins/peitychart/peitychart.init.js') }}"></script>
+
+		<!-- Custom js-->
+		<script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+
+		<script lang="javascript">
+			$("#submit").click(function(){
+				if ($("#search_clickable").val() == "0"){
+					$(this).text('Running...');
+					$("#search_clickable").val("1");
+				}
+				else{
+					$(this).removeAttr("href");
+				}
+			});
+		</script>
+	</body>
+</html>
